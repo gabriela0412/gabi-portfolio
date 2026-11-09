@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LOQALLI conecta viajeros con experiencias culturales auténticas de El Salvador. Descubre sus tradiciones, sabores, artesanías y comunidades.">
+    <meta name="theme-color" content="#f7f1e7">
+    <title>LOQALLI | El Salvador se vive</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#inicio" class="logo">LOQALLI<span>.</span></a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#experiencias">Experiencias</a>
+                <a href="#cultura">Nuestra cultura</a>
+                <a href="#nosotros">Nosotros</a>
+                <button class="nav-login" id="loginOpen">Iniciar sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+            <div class="hero-image"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content container">
+                <span class="eyebrow hero-eyebrow">DESCUBRE EL SALVADOR AUTÉNTICO</span>
+
+                <h1>
+                    Hay lugares que se visitan.
+                    <span>Y culturas que se viven.</span>
+                </h1>
+
+                <p>
+                    Conoce El Salvador a través de las personas,
+                    tradiciones y pequeñas historias que lo hacen único.
+                </p>
+
+                <a href="#experiencias" class="btn btn-primary">
+                    Explorar experiencias <span>↗</span>
+                </a>
+            </div>
+
+            <div class="hero-bottom">
+                <span>13°43' N · 89°22' W</span>
+                <span>EL SALVADOR, CENTROAMÉRICA</span>
+            </div>
+        </section>
+
+        <!-- INTRO -->
+        <section class="intro section-padding">
+            <div class="container intro-grid">
+                <div class="intro-label">
+                    <span class="section-number">01 /</span>
+                    <span>UNA NUEVA FORMA DE VIAJAR</span>
+                </div>
+
+                <div class="intro-content">
+                    <h2>
+                        El verdadero viaje comienza
+                        <span>cuando conoces a su gente.</span>
+                    </h2>
+
+                    <p>
+                        LOQALLI es un espacio para descubrir experiencias
+                        culturales creadas por personas locales. Desde
+                        aprender a preparar una receta tradicional hasta
+                        conocer el arte de una comunidad.
+                    </p>
+
+                    <a href="#nosotros" class="text-link">
+                        Conoce nuestra historia <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCES -->
+        <section class="experiences section-padding" id="experiencias">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-number">02 / EXPERIENCIAS</span>
+                        <h2>Descubre algo <span>nuestro.</span></h2>
+                        <p>
+                            Actividades que te acercan a las tradiciones
+                            y a la vida cotidiana de El Salvador.
+                        </p>
+                    </div>
+
+                    <span class="heading-decoration">LO LOCAL IMPORTA.</span>
+                </div>
+
+                <div class="experience-tools">
+                    <div class="search-box">
+                        <span>⌕</span>
+                        <input
+                            type="search"
+                            id="experienceSearch"
+                            placeholder="¿Qué te gustaría descubrir?"
+                            aria-label="Buscar experiencias"
+                        >
+                    </div>
+
+                    <div class="filter-list" id="filterList">
+                        <button class="filter-btn active" data-filter="all">Todas</button>
+                        <button class="filter-btn" data-filter="art">Arte y artesanía</button>
+                        <button class="filter-btn" data-filter="food">Gastronomía</button>
+                        <button class="filter-btn" data-filter="nature">Naturaleza</button>
+                        <button class="filter-btn" data-filter="culture">Cultura</button>
+                    </div>
+                </div>
+
+                <div class="experience-grid" id="experienceGrid">
+
+                    <article class="experience-card" data-category="art" data-search="la palma chalatenango pintura artesanía madera arte">
+                        <button class="experience-image" data-experience="palma" aria-label="Ver experiencia de arte en La Palma">
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Artesanias%20de%20La%20Palma%20Chalatenango.jpg"
+                                alt="Artesanías de madera pintadas a mano de La Palma, Chalatenango"
+                                loading="lazy"
+                            >
+                            <span class="image-location">CHALATENANGO</span>
+                        </button>
+
+                        <div class="experience-info">
+                            <span class="experience-category">ARTE Y ARTESANÍA</span>
+                            <h3>Colores de La Palma</h3>
+                            <p>Descubre los colores, formas y técnicas del arte tradicional palmeño.</p>
+                            <button class="card-link" data-experience="palma">Conocer experiencia <span>↗</span></button>
+                        </div>
+                    </article>
+
+                    <article class="experience-card" data-category="art" data-search="ilobasco cabañas barro cerámica artesanía figuras">
+                        <button class="experience-image" data-experience="ilobasco" aria-label="Ver experiencia de barro en Ilobasco">
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Artesanias%20de%20Ilobasco.JPG"
+                                alt="Artesanías tradicionales de barro de Ilobasco"
+                                loading="lazy"
+                            >
+                            <span class="image-location">CABAÑAS</span>
+                        </button>
+
+                        <div class="experience-info">
+                            <span class="experience-category">ARTE Y ARTESANÍA</span>
+                            <h3>El arte del barro</h3>
+                            <p>Acércate al trabajo artesanal y a la tradición alfarera de Ilobasco.</p>
+                            <button class="card-link" data-experience="ilobasco">Conocer experiencia <span>↗</span></button>
+                        </div>
+                    </article>
+
+                    <article class="experience-card" data-category="culture" data-search="suchitoto cuscatlan calles historia arquitectura cultura">
+                        <button class="experience-image" data-experience="suchitoto" aria-label="Ver experiencia cultural en Suchitoto">
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Calles%20de%20Suchitoto.jpg"
+                                alt="Calles tradicionales de Suchitoto, El Salvador"
+                                loading="lazy"
+                            >
+                            <span class="image-location">CUSCATLÁN</span>
+                        </button>
+
+                        <div class="experience-info">
+                            <span class="experience-category">CULTURA</span>
+                            <h3>Historias de Suchitoto</h3>
+                            <p>Conoce las historias, espacios y tradiciones de este pueblo colonial.</p>
+                            <button class="card-link" data-experience="suchitoto">Conocer experiencia <span>↗</span></button>
+                        </div>
+                    </article>
+
+                    <article class="experience-card" data-category="food" data-search="gastronomía tamales comida tradicional el salvador cocina">
+                        <button class="experience-image" data-experience="tamales" aria-label="Ver experiencia de cocina tradicional">
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Tamales%20el%20salavdor.jpg"
+                                alt="Tamales tradicionales de El Salvador"
+                                loading="lazy"
+                            >
+                            <span class="image-location">GASTRONOMÍA LOCAL</span>
+                        </button>
+
+                        <div class="experience-info">
+                            <span class="experience-category">GASTRONOMÍA</span>
+                            <h3>Sabores de casa</h3>
+                            <p>Acércate a la preparación de tamales y recetas transmitidas entre generaciones.</p>
+                            <button class="card-link" data-experience="tamales">Conocer experiencia <span>↗</span></button>
+                        </div>
+                    </article>
+
+                    <article class="experience-card" data-category="food" data-search="olocuilta la paz pupusas arroz comida gastronomía">
+                        <button class="experience-image" data-experience="pupusas" aria-label="Ver experiencia de pupusas en Olocuilta">
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Typical%20serving%20of%20Pupusas%20in%20El%20Salvador.jpg"
+                                alt="Pupusas de arroz servidas en una pupusería de Olocuilta"
+                                loading="lazy"
+                            >
+                            <span class="image-location">OLOCUILTA</span>
+                        </button>
+
+                        <div class="experience-info">
+                            <span class="experience-category">GASTRONOMÍA</span>
+                            <h3>Una tradición en cada pupusa</h3>
+                            <p>Conoce la cultura de las pupuserías y los sabores de Olocuilta.</p>
+                            <button class="card-link" data-experience="pupusas">Conocer experiencia <span>↗</span></button>
+                        </div>
+                    </article>
+
+                    <article class="experience-card" data-category="nature" data-search="café ahuachapan finca cosecha cafetal naturaleza">
+                        <button class="experience-image" data-experience="cafe" aria-label="Ver experiencia del café salvadoreño">
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Coffee%20Processing%20in%20Ahuachapan%2C%20El%20Salvador.jpg"
+                                alt="Proceso de café en Ahuachapán, El Salvador"
+                                loading="lazy"
+                            >
+                            <span class="image-location">AHUACHAPÁN</span>
+                        </button>
+
+                        <div class="experience-info">
+                            <span class="experience-category">TRADICIÓN Y NATURALEZA</span>
+                            <h3>El camino del café</h3>
+                            <p>Descubre el proceso y la cultura que rodean al café salvadoreño.</p>
+                            <button class="card-link" data-experience="cafe">Conocer experiencia <span>↗</span></button>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="no-results" id="noResults" hidden>
+                    No encontramos experiencias con esa búsqueda.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- CULTURE BANNER -->
+        <section class="culture-banner" id="cultura">
+            <div class="culture-image"></div>
+            <div class="culture-overlay"></div>
+
+            <div class="container culture-content">
+                <span class="section-number">03 / NUESTRA IDENTIDAD</span>
+                <h2>Pequeñas tradiciones.<br><span>Grandes historias.</span></h2>
+                <p>
+                    Nuestra cultura vive en los colores de nuestras artesanías,
+                    en los sabores de nuestra cocina y en las historias
+                    que compartimos.
+                </p>
+                <a href="#experiencias" class="btn btn-light">Explorar cultura <span>↗</span></a>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="how-section section-padding">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-number">04 / CÓMO FUNCIONA</span>
+                        <h2>Viajar de otra <span>manera.</span></h2>
+                    </div>
+                </div>
+
+                <div class="steps-grid">
+                    <article class="step">
+                        <span class="step-number">01</span>
+                        <div class="step-icon">⌕</div>
+                        <h3>Explora</h3>
+                        <p>Encuentra actividades y experiencias culturales en diferentes lugares de El Salvador.</p>
+                    </article>
+
+                    <article class="step">
+                        <span class="step-number">02</span>
+                        <div class="step-icon">◇</div>
+                        <h3>Conecta</h3>
+                        <p>Conoce a las personas locales que comparten sus conocimientos y tradiciones.</p>
+                    </article>
+
+                    <article class="step">
+                        <span class="step-number">03</span>
+                        <div class="step-icon">✳</div>
+                        <h3>Vive</h3>
+                        <p>Participa, aprende y descubre el destino desde una perspectiva diferente.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about-section section-padding" id="nosotros">
+            <div class="container about-grid">
+                <div class="about-visual">
+                    <div class="about-image-main">
+                        <img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Diversidad%20de%20Artesanias%20Palme%C3%B1as.JPG"
+                            alt="Diversidad de artesanías de La Palma"
+                            loading="lazy"
+                        >
+                    </div>
+                    <span class="about-stamp">HECHO CON<br>IDENTIDAD</span>
+                </div>
+
+                <div class="about-content">
+                    <span class="section-number">05 / SOBRE LOQALLI</span>
+                    <h2>Conectar personas.<br><span>Compartir lo nuestro.</span></h2>
+
+                    <p>
+                        LOQALLI nace de una idea: la cultura de un lugar
+                        se conoce mejor cuando escuchamos a quienes la viven.
+                    </p>
+
+                    <p>
+                        Buscamos acercar a viajeros y comunidades locales
+                        mediante experiencias pequeñas, significativas
+                        y relacionadas con la identidad salvadoreña.
+                    </p>
+
+                    <a href="#experiencias" class="text-link">Descubrir experiencias <span>→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container cta-content">
+                <span class="section-number">TU PRÓXIMA HISTORIA COMIENZA AQUÍ</span>
+                <h2>El Salvador te espera.</h2>
+                <p>Descubre, conecta y vive cada destino de una forma diferente.</p>
+                <a href="#experiencias" class="btn btn-primary">Encontrar experiencias <span>↗</span></a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-main">
+            <div class="footer-brand">
+                <a href="#inicio" class="logo">LOQALLI<span>.</span></a>
+                <p>El Salvador de cerca.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#experiencias">Experiencias</a>
+                <a href="#cultura">Nuestra cultura</a>
+                <a href="#nosotros">Nosotros</a>
+            </div>
+
+            <div class="footer-note">
+                <span>DESCUBRE LO LOCAL.</span>
+                <p>El Salvador · Centroamérica</p>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <span>© <span id="currentYear"></span> LOQALLI. Todos los derechos reservados.</span>
+            <a href="#inicio">Volver arriba ↑</a>
+        </div>
+
+        <div class="container image-credits">
+            <details>
+                <summary>Créditos de fotografías</summary>
+                <p>
+                    La Palma: ElmerGuevara, Wikimedia Commons, CC BY-SA 3.0.
+                    Ilobasco: ElmerGuevara, Wikimedia Commons, CC BY-SA 3.0.
+                    Suchitoto: ElmerGuevara, Wikimedia Commons, CC BY-SA 3.0.
+                    Pupusas: Ll1324, Wikimedia Commons, CC0.
+                    Las fotografías enlazadas conservan sus licencias originales.
+                </p>
+                <a href="https://commons.wikimedia.org/wiki/Category:La_Palma,_El_Salvador" target="_blank" rel="noopener noreferrer">La Palma</a>
+                <a href="https://commons.wikimedia.org/wiki/Category:Ilobasco" target="_blank" rel="noopener noreferrer">Ilobasco</a>
+                <a href="https://commons.wikimedia.org/wiki/Category:Suchitoto" target="_blank" rel="noopener noreferrer">Suchitoto</a>
+                <a href="https://commons.wikimedia.org/wiki/Category:Coffee_in_El_Salvador" target="_blank" rel="noopener noreferrer">Café</a>
+                <a href="https://commons.wikimedia.org/wiki/Category:Food_of_El_Salvador" target="_blank" rel="noopener noreferrer">Gastronomía</a>
+            </details>
+        </div>
+    </footer>
+
+    <!-- EXPERIENCE MODAL -->
+    <div class="modal" id="experienceModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close="experience"></div>
+
+        <div class="modal-panel experience-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" data-close="experience" aria-label="Cerrar">×</button>
+
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="">
+            </div>
+
+            <div class="modal-body">
+                <span class="experience-category" id="modalCategory"></span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+
+                <div class="host-information">
+                    <span class="host-avatar">L</span>
+                    <div>
+                        <strong>Comunidad anfitriona local</strong>
+                        <span>Personas que comparten sus tradiciones</span>
+                    </div>
+                </div>
+
+                <div class="modal-reviews">
+                    <h3>Comparte tu opinión</h3>
+                    <p>Si participaste en una experiencia, puedes dejar un comentario.</p>
+
+                    <form id="reviewForm">
+                        <textarea id="reviewText" placeholder="Escribe tu comentario..." rows="3" required maxlength="400"></textarea>
+                        <button type="submit" class="btn btn-primary">Publicar comentario</button>
+                    </form>
+
+                    <div id="reviewList" class="review-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal" id="loginModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close="login"></div>
+
+        <div class="modal-panel login-panel" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+            <button class="modal-close" data-close="login" aria-label="Cerrar">×</button>
+
+            <span class="logo modal-logo">LOQALLI<span>.</span></span>
+            <span class="section-number">BIENVENIDO A LOQALLI</span>
+            <h2 id="loginTitle">Tu próxima historia comienza aquí.</h2>
+            <p>Este formulario es una demostración visual de acceso para visitantes.</p>
+
+            <form id="loginForm">
+                <label for="loginEmail">Correo electrónico</label>
+                <input type="email" id="loginEmail" placeholder="tu@correo.com" required>
+
+                <label for="loginPassword">Contraseña</label>
+                <input type="password" id="loginPassword" placeholder="Tu contraseña" required minlength="4">
+
+                <button type="submit" class="btn btn-primary login-submit">Continuar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>

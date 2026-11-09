@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Educational and professional CV of Fátima Hernández.">
+    <meta name="theme-color" content="#050509">
+
+    <title>Fátima Hernández | CV</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #050509;
+            --surface: #0e0c15;
+            --pink: #e8c5d6;
+            --pink-muted: #bd91a8;
+            --text: #f3edf1;
+            --soft: #c4bac4;
+            --muted: #89818e;
+            --border: rgba(232, 197, 214, 0.15);
+            --main-font: 'DM Sans', sans-serif;
+            --display-font: 'Playfair Display', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family: var(--main-font);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1000px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        .cv-header {
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .brand-mark {
+            width: 37px;
+            height: 37px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--pink);
+            font-family: var(--display-font);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .action {
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 10px 17px;
+            font-family: var(--main-font);
+            font-size: 0.72rem;
+            color: var(--soft);
+            background: transparent;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .action:hover {
+            color: var(--pink);
+            border-color: var(--pink);
+        }
+
+        .cv-main {
+            padding: 75px 0;
+        }
+
+        .cv-intro {
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .eyebrow {
+            color: var(--pink-muted);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-family: var(--display-font);
+            font-size: clamp(2.8rem, 7vw, 4.7rem);
+            font-weight: 500;
+            line-height: 1.15;
+        }
+
+        h1 span {
+            color: var(--pink);
+        }
+
+        .professional-title {
+            margin-top: 15px;
+            color: var(--pink-muted);
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+        }
+
+        .intro-description {
+            max-width: 730px;
+            color: var(--soft);
+            font-size: 0.9rem;
+            margin-top: 25px;
+            line-height: 1.9;
+        }
+
+        .cv-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 25px;
+            margin-top: 28px;
+            color: var(--soft);
+            font-size: 0.76rem;
+        }
+
+        .cv-contact a:hover {
+            color: var(--pink);
+        }
+
+        .cv-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cv-academic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .cv-academic-grid .cv-section {
+            min-width: 0;
+            padding: 30px 25px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: linear-gradient(
+                145deg,
+                rgba(232, 197, 214, 0.045),
+                rgba(14, 12, 21, 0.7)
+            );
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .section-number {
+            color: var(--pink-muted);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+        }
+
+        h2 {
+            font-family: var(--display-font);
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .cv-item {
+            margin-bottom: 25px;
+        }
+
+        .cv-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .cv-item h3 {
+            font-size: 0.96rem;
+            font-weight: 600;
+        }
+
+        .cv-item .meta {
+            color: var(--pink-muted);
+            font-size: 0.73rem;
+            margin-top: 5px;
+        }
+
+        .cv-item p {
+            color: var(--soft);
+            font-size: 0.81rem;
+            margin-top: 8px;
+            line-height: 1.8;
+        }
+
+        .cv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .skills-list span {
+            color: var(--pink-muted);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 8px 13px;
+            font-size: 0.72rem;
+        }
+
+        .cv-footer {
+            padding: 30px 0;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.7rem;
+        }
+
+        @media (max-width: 700px) {
+            .header-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .cv-main {
+                padding: 50px 0;
+            }
+
+            .cv-academic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-academic-grid .cv-section {
+                padding: 25px 20px;
+            }
+
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 1.55rem;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 14mm;
+        }
+
+        @media print {
+            html,
+            body {
+                width: 100%;
+                height: auto;
+                overflow: visible !important;
+                background: #ffffff !important;
+                color: #222222 !important;
+                scroll-behavior: auto;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                font-size: 10pt;
+            }
+
+            .cv-header,
+            .cv-footer,
+            .header-actions {
+                display: none !important;
+            }
+
+            .container {
+                width: 100%;
+                max-width: none;
+                margin: 0;
+            }
+
+            .cv-main {
+                padding: 0;
+                margin: 0;
+            }
+
+            .cv-intro {
+                padding-bottom: 22px;
+                border-color: #dddddd;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .eyebrow,
+            .professional-title,
+            .section-number,
+            .cv-item .meta {
+                color: #795b6c !important;
+            }
+
+            h1,
+            h2,
+            .cv-item h3 {
+                color: #222222 !important;
+            }
+
+            h1 span {
+                color: #795b6c !important;
+            }
+
+            .intro-description,
+            .cv-item p,
+            .cv-contact {
+                color: #444444 !important;
+            }
+
+            .cv-contact a {
+                color: #444444 !important;
+            }
+
+            .cv-section {
+                padding: 22px 0;
+                border-color: #dddddd;
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+
+            .cv-academic-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+                align-items: start;
+            }
+
+            .cv-academic-grid .cv-section {
+                padding: 18px 14px;
+                border: 1px solid #dddddd;
+                border-radius: 10px;
+                background: #ffffff !important;
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+
+            .section-heading {
+                margin-bottom: 16px;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .cv-item {
+                margin-bottom: 17px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .cv-item:last-child {
+                margin-bottom: 0;
+            }
+
+            .cv-item h3,
+            .cv-item .meta {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .skills-list {
+                gap: 6px;
+            }
+
+            .skills-list span {
+                color: #555555 !important;
+                border-color: #cccccc;
+                padding: 5px 9px;
+            }
+
+            .cv-grid {
+                gap: 15px;
+            }
+
+            a {
+                text-decoration: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="cv-header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="brand">
+                <span class="brand-mark">FH</span>
+                <span>Fátima Hernández</span>
+            </a>
+
+            <div class="header-actions">
+                <a class="action" href="index.html">
+                    ← Back to portfolio
+                </a>
+
+                <button class="action" onclick="window.print()">
+                    Print / Save PDF
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="container cv-main">
+
+        <section class="cv-intro">
+            <p class="eyebrow">CURRICULUM VITAE</p>
+
+            <h1>Fátima <span>Hernández</span></h1>
+
+            <p class="professional-title">
+                General High School Student
+            </p>
+
+            <p class="intro-description">
+                Determined and persevering student committed to academic and personal
+                development. Interested in law, justice, leadership and service to society.
+                Motivated to continue learning, strengthen my abilities and contribute
+                positively to my community and country.
+            </p>
+
+            <div class="cv-contact">
+                <a href="mailto:hernandezgabrielaa@gmail.com">
+                    hernandezgabrielaa@gmail.com
+                </a>
+
+                <span>Lourdes, Colón, La Libertad, El Salvador</span>
+            </div>
+        </section>
+
+        <div class="cv-academic-grid">
+
+            <section class="cv-section">
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <h2>Education</h2>
+                </div>
+
+                <article class="cv-item">
+                    <h3>¡Supérate! Hilasal</h3>
+                    <p class="meta">Business Program · 2024–2026</p>
+                    <p>
+                        Complementary education in English, technology, values, leadership
+                        and personal and professional skills.
+                    </p>
+                </article>
+
+                <article class="cv-item">
+                    <h3>General High School</h3>
+                    <p class="meta">Secondary Education · 2025</p>
+                    <p>
+                        Complejo Educativo Soldado Óscar Antonio Ortiz Reyes.
+                        <br>
+                        Complejo Educativo Sor Clara Quiróz.
+                    </p>
+                </article>
+            </section>
+
+            <section class="cv-section">
+                <div class="section-heading">
+                    <span class="section-number">02</span>
+                    <h2>Courses and Certifications</h2>
+                </div>
+
+                <article class="cv-item">
+                    <h3>Microsoft Excel Expert</h3>
+                    <p class="meta">2026 · Certification</p>
+                </article>
+
+                <article class="cv-item">
+                    <h3>Microsoft Excel</h3>
+                    <p class="meta">2025 · Certification</p>
+                </article>
+
+                <article class="cv-item">
+                    <h3>Stanford Code in Place</h3>
+                    <p class="meta">April–June · Python programming training</p>
+                </article>
+
+                <article class="cv-item">
+                    <h3>Technical Course in Vegetable Crops</h3>
+                    <p class="meta">2026 · Fundación Carlos Him · 2 hours</p>
+                </article>
+
+                <article class="cv-item">
+                    <h3>TOEIC Speaking and Writing</h3>
+                    <p class="meta">Preparation and certification process in progress</p>
+                </article>
+            </section>
+
+        </div>
+
+        <section class="cv-section">
+            <div class="section-heading">
+                <span class="section-number">03</span>
+                <h2>Technology Projects</h2>
+            </div>
+
+            <article class="cv-item">
+                <h3>FINANS — ExpoTech 2025</h3>
+                <p class="meta">Website development</p>
+                <p>
+                    Participated in a digital project applying technology,
+                    creativity and teamwork to website development.
+                </p>
+            </article>
+
+            <article class="cv-item">
+                <h3>LOQALLI — Expo 2025</h3>
+                <p class="meta">Technology proposal</p>
+                <p>
+                    Participated in a technology proposal focused on planning,
+                    innovation and problem solving through a website.
+                </p>
+            </article>
+
+            <article class="cv-item">
+                <h3>MYHOOD — Hackathon 2024</h3>
+                <p class="meta">Community-focused application</p>
+                <p>
+                    Participated in an innovation project exploring how an
+                    application could support neighborhood communication
+                    and access to useful information.
+                </p>
+            </article>
+        </section>
+
+        <section class="cv-section">
+            <div class="section-heading">
+                <span class="section-number">04</span>
+                <h2>Volunteering and Community Service</h2>
+            </div>
+
+            <article class="cv-item">
+                <h3>GLASSWING</h3>
+                <p class="meta">2025</p>
+                <p>
+                    Educational support and participation in extracurricular clubs.
+                </p>
+            </article>
+
+            <article class="cv-item">
+                <h3>Leer para Soñar</h3>
+                <p class="meta">2024</p>
+                <p>
+                    Participation in education initiatives, safe spaces
+                    and activities promoting equality.
+                </p>
+            </article>
+
+            <article class="cv-item">
+                <h3>Church Youth Group</h3>
+                <p class="meta">Community service</p>
+                <p>
+                    Participation in fundraising, sales and event decoration activities.
+                </p>
+            </article>
+        </section>
+
+        <section class="cv-section">
+            <div class="section-heading">
+                <span class="section-number">05</span>
+                <h2>Skills</h2>
+            </div>
+
+            <div class="skills-list">
+                <span>Leadership</span>
+                <span>Teamwork</span>
+                <span>Problem solving</span>
+                <span>Creative thinking</span>
+                <span>Analytical thinking</span>
+                <span>Responsibility</span>
+                <span>Discipline</span>
+                <span>Adaptability</span>
+                <span>Perseverance</span>
+                <span>Empathy</span>
+                <span>Integrity</span>
+                <span>Continuous learning</span>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <div class="section-heading">
+                <span class="section-number">06</span>
+                <h2>Languages</h2>
+            </div>
+
+            <div class="cv-grid">
+                <article class="cv-item">
+                    <h3>Spanish</h3>
+                    <p class="meta">Native</p>
+                </article>
+
+                <article class="cv-item">
+                    <h3>English</h3>
+                    <p class="meta">Intermediate</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="cv-footer">
+        <div class="container">
+            Fátima Hernández · Academic Portfolio · 2026
+        </div>
+    </footer>
+
+</body>
+</html>
