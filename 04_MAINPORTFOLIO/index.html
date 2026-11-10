@@ -1,213 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic and professional portfolio of Fátima Hernández, showcasing education, skills, technology projects and certifications.">
-    <meta name="author" content="Fátima Hernández">
-    <meta name="theme-color" content="#050509">
-    <title>Fátima Hernández | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academic and professional portfolio of Fátima Hernández, showcasing education, skills, technology projects and certifications.">
+<meta name="author" content="Fátima Hernández">
+<meta name="theme-color" content="#050509">
+<title>Fátima Hernández | Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+.skills-top-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+}
+
+.skills-grid .skill-card {
+    min-width: 0;
+}
+
+.technology-card {
+    width: 100%;
+}
+
+.technology-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 26px 18px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 25px;
+}
+
+.technology-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+}
+
+.technology-item img {
+    width: 27px;
+    height: 27px;
+    max-width: 27px;
+    max-height: 27px;
+    object-fit: contain;
+    display: block;
+}
+
+.technology-item span {
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.skill-footnote {
+    margin-top: 22px;
+}
+
+@media (max-width: 700px) {
+    .skills-top-row {
+        grid-template-columns: 1fr;
+    }
+
+    .technology-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px 12px;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 950px) {
+    .technology-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 420px) {
+    .technology-item img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .technology-item span {
+        font-size: 11px;
+    }
+}
+</style>
 </head>
-
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
 
-    <div class="space-background" aria-hidden="true">
-        <div class="stars stars-one"></div>
-        <div class="stars stars-two"></div>
-        <div class="stars stars-three"></div>
-        <div class="shooting-stars" id="shootingStars"></div>
-    </div>
+<div class="scroll-progress" id="scrollProgress"></div>
 
-    <div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+<div class="space-background" aria-hidden="true">
+    <div class="stars stars-one"></div>
+    <div class="stars stars-two"></div>
+    <div class="stars stars-three"></div>
+    <div class="shooting-stars" id="shootingStars"></div>
+</div>
 
-    <header class="site-header">
-        <nav class="navbar container">
-            <a class="brand" href="#home" aria-label="Fátima Hernández home">
-                <img class="brand-mark" src="assets/images/photo-1.jpeg" alt="Fátima Hernández">
-                <span>Fátima Hernández</span>
-            </a>
+<div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
 
-            <button class="menu-toggle" id="menuToggle" type="button"
-                aria-label="Open navigation" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+<header class="site-header">
+    <nav class="navbar container">
+        <a class="brand" href="#home" aria-label="Fátima Hernández home">
+            <img class="brand-mark" src="assets/images/photo-1.jpeg" alt="Fátima Hernández">
+            <span>Fátima Hernández</span>
+        </a>
 
-            <div class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#education">Education</a>
-                <a href="#volunteering">Volunteering</a>
-                <a href="#contact" class="nav-contact">Contact</a>
-            </div>
-        </nav>
-    </header>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
 
-    <main>
-        <section class="hero section" id="home">
-            <div class="hero-decoration hero-decoration-one"></div>
-            <div class="hero-decoration hero-decoration-two"></div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#volunteering">Volunteering</a>
+            <a href="#contact" class="nav-contact">Contact</a>
+        </div>
+    </nav>
+</header>
 
-            <div class="container hero-grid">
-                <div class="hero-content reveal">
-                    <p class="eyebrow">
-                        <span class="eyebrow-line"></span>
-                        STUDENT PORTFOLIO
-                    </p>
+<main>
 
-                    <h1>Fátima <span>Hernández</span></h1>
-                    <p class="hero-role">General High School Student</p>
+    <section class="hero section" id="home">
+        <div class="hero-decoration hero-decoration-one"></div>
+        <div class="hero-decoration hero-decoration-two"></div>
 
-                    <p class="hero-description">
-                        Determined to learn, grow and create meaningful projects.
-                        Interested in law, leadership, technology and service to society.
-                    </p>
+        <div class="container hero-grid">
+            <div class="hero-content reveal">
+                <p class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    STUDENT PORTFOLIO
+                </p>
 
-                    <div class="hero-actions">
-                        <a class="button button-primary" href="#projects">
-                            Explore my work <span>↗</span>
-                        </a>
-                        <a class="button button-secondary" href="cv.html">
-                            View my CV
-                        </a>
-                    </div>
+                <h1>Fátima <span>Hernández</span></h1>
 
-                    <div class="hero-socials" aria-label="Professional profiles">
-                        <a href="https://www.linkedin.com/in/f%C3%A1tima-hern%C3%A1ndez-843629430/"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="hero-social-link"
-                           aria-label="LinkedIn profile"
-                           title="LinkedIn">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.3 18H5.7V9.5h2.6ZM7 8.3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3ZM19 18h-2.6v-4.1c0-1-.02-2.2-1.35-2.2s-1.56 1.05-1.56 2.13V18h-2.6V9.5h2.5v1.16h.04a2.75 2.75 0 0 1 2.48-1.36c2.65 0 3.14 1.74 3.14 4Z"/>
-                            </svg>
-                            <span>LinkedIn</span>
-                        </a>
+                <p class="hero-role">General High School Student</p>
 
-                        <a href="https://github.com/gabriela0412"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="hero-social-link"
-                           aria-label="GitHub profile"
-                           title="GitHub">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.67-3.75-1.32-3.75-1.32-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.04-1.15 3.04-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3.01 0 4.29-2.61 5.23-5.1 5.51.4.35.75 1.03.75 2.08V22c0 .29.2.64.76.53A11.1 11.1 0 0 0 12 .9Z"/>
-                            </svg>
-                            <span>GitHub</span>
-                        </a>
-                    </div>
+                <p class="hero-description">
+                    Determined to learn, grow and create meaningful projects.
+                    Interested in law, leadership, technology and service to society.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projects">
+                        Explore my work <span>↗</span>
+                    </a>
+                    <a class="button button-secondary" href="cv.html">View my CV</a>
                 </div>
 
-                <div class="hero-visual reveal">
-                    <div class="visual-glow"></div>
+                <div class="hero-socials" aria-label="Professional profiles">
+                    <a href="https://www.linkedin.com/in/f%C3%A1tima-hern%C3%A1ndez-843629430/" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="LinkedIn profile" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.3 18H5.7V9.5h2.6ZM7 8.3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3ZM19 18h-2.6v-4.1c0-1-.02-2.2-1.35-2.2s-1.56 1.05-1.56 2.13V18h-2.6V9.5h2.5v1.16h.04a2.75 2.75 0 0 1 2.48-1.36c2.65 0 3.14 1.74 3.14 4Z"/>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
 
-                    <div class="memory-gallery" id="memoryGallery">
-                        <div class="gallery-heading">
-                            <span class="gallery-dot"></span>
-                            A COLLECTION OF MEMORIES
-                        </div>
-
-                        <div class="memory-stack">
-                            <button class="memory-card memory-card-back" type="button" aria-label="Show next memory">
-                                <img src="assets/images/photo-3.jpeg" alt="Personal photograph 3"
-                                    style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                            </button>
-
-                            <button class="memory-card memory-card-middle" type="button" aria-label="Show next memory">
-                                <img src="assets/images/photo-2.jpeg" alt="Personal photograph 2"
-                                    style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                            </button>
-
-                            <button class="memory-card memory-card-top" type="button" aria-label="Show next memory">
-                                <img src="assets/images/photo-1.jpeg" alt="Personal photograph 1"
-                                    style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                            </button>
-                        </div>
-
-                        <div class="gallery-footer">
-                            <span class="gallery-counter" id="galleryCounter">01 / 03</span>
-                            <span class="gallery-hint">TAP TO DISCOVER</span>
-                        </div>
-                    </div>
-
-                    <div class="orbit orbit-one"></div>
-                    <div class="orbit orbit-two"></div>
+                    <a href="https://github.com/gabriela0412" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="GitHub profile" title="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.67-3.75-1.32-3.75-1.32-.5-1.29-1.23-1.63-1.23-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.93.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.04-1.15 3.04-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3.01 0 4.29-2.61 5.23-5.1 5.51.4.35.75 1.03.75 2.08V22c0 .29.2.64.76.53A11.1 11.1 0 0 0 12 .9Z"/>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
                 </div>
             </div>
 
-            <a class="scroll-cue" href="#about">
-                <span></span>
-                Scroll to explore
-            </a>
-        </section>
+            <div class="hero-visual reveal">
+                <div class="visual-glow"></div>
 
-        <section class="section about-section" id="about">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">01 / INTRODUCTION</p>
-                    <h2>A little <span>about me</span></h2>
-                    <p class="section-subtitle">The person behind the projects and goals.</p>
+                <div class="memory-gallery" id="memoryGallery">
+                    <div class="gallery-heading">
+                        <span class="gallery-dot"></span>
+                        A COLLECTION OF MEMORIES
+                    </div>
+
+                    <div class="memory-stack">
+                        <button class="memory-card memory-card-back" type="button" aria-label="Show next memory">
+                            <img src="assets/images/photo-3.jpeg" alt="Personal photograph 3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        </button>
+
+                        <button class="memory-card memory-card-middle" type="button" aria-label="Show next memory">
+                            <img src="assets/images/photo-2.jpeg" alt="Personal photograph 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        </button>
+
+                        <button class="memory-card memory-card-top" type="button" aria-label="Show next memory">
+                            <img src="assets/images/photo-1.jpeg" alt="Personal photograph 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        </button>
+                    </div>
+
+                    <div class="gallery-footer">
+                        <span class="gallery-counter" id="galleryCounter">01 / 03</span>
+                        <span class="gallery-hint">TAP TO DISCOVER</span>
+                    </div>
                 </div>
 
-                <div class="about-grid">
-                    <article class="about-card reveal">
-                        <span class="card-index">01</span>
-                        <h3>Who I am</h3>
-                        <p>
-                            I am a determined, persevering and committed student who values
-                            academic and personal growth. I am interested in law, leadership
-                            and serving society, with the goal of contributing positively
-                            to the development of my country.
-                        </p>
-                    </article>
-
-                    <article class="about-card about-card-accent reveal">
-                        <span class="card-index">02</span>
-                        <h3>What motivates me</h3>
-                        <p>
-                            I believe education, justice and empathy can create opportunities
-                            and positive changes. I want to continue learning, strengthen my
-                            abilities and use my knowledge to help others.
-                        </p>
-                    </article>
-
-                    <article class="about-card reveal">
-                        <span class="card-index">03</span>
-                        <h3>My values</h3>
-                        <div class="value-tags">
-                            <span>Justice</span>
-                            <span>Respect</span>
-                            <span>Honesty</span>
-                            <span>Empathy</span>
-                            <span>Leadership</span>
-                            <span>Discipline</span>
-                        </div>
-                    </article>
-                </div>
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section skills-section" id="skills">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">02 / MY TOOLKIT</p>
-                    <h2>Skills and <span>technologies</span></h2>
-                    <p class="section-subtitle">
-                        Abilities and tools developed through my education and projects.
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-heading reveal">
+                <p class="eyebrow">01 / INTRODUCTION</p>
+                <h2>A little <span>about me</span></h2>
+                <p class="section-subtitle">The person behind the projects and goals.</p>
+            </div>
+
+            <div class="about-grid">
+                <article class="about-card reveal">
+                    <span class="card-index">01</span>
+                    <h3>Who I am</h3>
+                    <p>
+                        I am a determined, persevering and committed student who values
+                        academic and personal growth. I am interested in law, leadership
+                        and serving society, with the goal of contributing positively
+                        to the development of my country.
                     </p>
-                </div>
+                </article>
 
-                <div class="skills-grid">
+                <article class="about-card about-card-accent reveal">
+                    <span class="card-index">02</span>
+                    <h3>What motivates me</h3>
+                    <p>
+                        I believe education, justice and empathy can create opportunities
+                        and positive changes. I want to continue learning, strengthen my
+                        abilities and use my knowledge to help others.
+                    </p>
+                </article>
+
+                <article class="about-card reveal">
+                    <span class="card-index">03</span>
+                    <h3>My values</h3>
+                    <div class="value-tags">
+                        <span>Justice</span>
+                        <span>Respect</span>
+                        <span>Honesty</span>
+                        <span>Empathy</span>
+                        <span>Leadership</span>
+                        <span>Discipline</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <div class="section-heading reveal">
+                <p class="eyebrow">02 / MY TOOLKIT</p>
+                <h2>Skills and <span>technologies</span></h2>
+                <p class="section-subtitle">
+                    Abilities and tools developed through my education and projects.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skills-top-row">
                     <article class="skill-card reveal">
-                        <h3>Personal skills</h3>
+                        <h3>Personal Skills</h3>
                         <ul>
                             <li>Leadership and teamwork</li>
                             <li>Problem solving</li>
@@ -220,24 +290,7 @@
                     </article>
 
                     <article class="skill-card reveal">
-                        <h3>Technology and tools</h3>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>Python</li>
-                            <li>Microsoft Excel</li>
-                            <li>Microsoft 365</li>
-                            <li>Visual Studio Code</li>
-                            <li>Canva</li>
-                        </ul>
-                        <p class="skill-footnote">
-                            Technologies and tools used during academic training and projects.
-                        </p>
-                    </article>
-
-                    <article class="skill-card reveal">
-                        <h3>Areas of interest</h3>
+                        <h3>Areas of Interest</h3>
                         <ul>
                             <li>Law and justice</li>
                             <li>Leadership</li>
@@ -247,283 +300,343 @@
                         </ul>
                     </article>
                 </div>
-            </div>
-        </section>
 
-        <section class="section projects-section" id="projects">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">03 / SELECTED WORK</p>
-                    <h2>Featured <span>projects</span></h2>
-                    <p class="section-subtitle">
-                        Technology projects developed as part of my ¡Supérate! experience.
+                <article class="skill-card technology-card reveal">
+                    <h3>Technology Tools</h3>
+
+                    <div class="technology-grid">
+                        <div class="technology-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML icon">
+                            <span>HTML</span>
+                        </div>
+
+                        <div class="technology-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS icon">
+                            <span>CSS</span>
+                        </div>
+
+                        <div class="technology-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript icon">
+                            <span>JavaScript</span>
+                        </div>
+
+                        <div class="technology-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python icon">
+                            <span>Python</span>
+                        </div>
+
+                        <div class="technology-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="Visual Studio Code icon">
+                            <span>Visual Studio Code</span>
+                        </div>
+
+                        <div class="technology-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git icon">
+                            <span>Git</span>
+                        </div>
+
+                        <div class="technology-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub icon">
+                            <span>GitHub</span>
+                        </div>
+
+                        <div class="technology-item">
+                            <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe icon">
+                            <span>Stripe</span>
+                        </div>
+                    </div>
+
+                    <p class="skill-footnote">
+                        Technologies and tools used during academic training and projects.
                     </p>
-                </div>
-
-                <div class="projects-grid">
-                    <article class="project-card reveal">
-                        <div class="project-top">
-                            <span class="project-year">2024</span>
-                            <span class="project-type">HACKATHON</span>
-                        </div>
-                        <div class="project-symbol">01</div>
-                        <h3>MYHOOD</h3>
-                        <p class="project-description">
-                            A community-focused application developed during Hackathon 2024.
-                            The platform was designed to improve communication and access
-                            to useful neighborhood information. It also allowed community
-                            members to discover volunteer opportunities and create their
-                            own initiatives, encouraging participation and collaboration
-                            within their neighborhoods.
-                        </p>
-                        <div class="project-tags">
-                            <span>Power Apps Development</span>
-                            <span>UI/UX Design</span>
-                        </div>
-                        <a class="project-link"
-                           href="https://apps.powerapps.com/play/e/default-d8e3bd44-0bba-426b-952d-ada7bb17393c/a/3a847e19-cc25-45d2-9c32-d7da4d3f4ea5?tenantId=d8e3bd44-0bba-426b-952d-ada7bb17393c&hint=375a041c-9f9b-4d1b-8ca0-4f06e231d00d&sourcetime=1794165853092"
-                           target="_blank" rel="noopener noreferrer">
-                            Open original application <span>↗</span>
-                        </a>
-                    </article>
-
-                    <article class="project-card project-card-featured reveal">
-                        <div class="project-top">
-                            <span class="project-year">2025</span>
-                            <span class="project-type">EXPO</span>
-                        </div>
-                        <div class="project-symbol">02</div>
-                        <h3>LOQALLI</h3>
-                        <p class="project-description">
-                            A platform concept that connects tourists with local hosts
-                            through authentic cultural micro-experiences in El Salvador.
-                            Visitors can discover and take part in activities such as
-                            learning to prepare traditional food, exploring local customs
-                            and experiencing Salvadoran culture through the people who
-                            know it best. I created the original idea and contributed
-                            to the front-end development of the website.
-                        </p>
-                        <div class="project-tags">
-                            <span>Concept Creator</span>
-                            <span>Front-End Development</span>
-                        </div>
-                        <a class="project-link" href="../02_LOQALLI/index.html">
-                            Explore project <span>↗</span>
-                        </a>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-top">
-                            <span class="project-year">2025</span>
-                            <span class="project-type">EXPOTECH</span>
-                        </div>
-                        <div class="project-symbol">03</div>
-                        <h3>FINANS</h3>
-                        <p class="project-description">
-                            A financial management platform designed for micro and small
-                            businesses. FINANS combines income and expense tracking,
-                            inventory management, financial insights and an AI-powered
-                            assistant to support smarter business decisions.
-                        </p>
-                        <div class="project-tags">
-                            <span>Back-End Development</span>
-                            <span>Stripe Payment Integration</span>
-                        </div>
-                        <a class="project-link"
-                           href="https://finans-website.onrender.com/"
-                           target="_blank" rel="noopener noreferrer">
-                            Visit Project <span>↗</span>
-                        </a>
-                    </article>
-                </div>
+                </article>
             </div>
-        </section>
-
-        <section class="section education-section" id="education">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">04 / COMPLEMENTARY TRAINING</p>
-                    <h2>Complementary <span>Training</span></h2>
-                </div>
-
-                <div class="certificates-panel reveal">
-                    <div class="certificates-heading">
-                        <div>
-                            <p class="eyebrow">COMPLEMENTARY TRAINING</p>
-                            <h3>Courses and certifications</h3>
-                            <p class="certificates-intro">
-                                Select a certificate to explore its details and learning experience.
-                            </p>
-                        </div>
-                        <a href="cv.html" class="text-link">View full CV ↗</a>
-                    </div>
-
-                    <div class="certificate-gallery" id="certificateGallery">
-                        <div class="certificate-preview">
-                            <div class="certificate-image-frame">
-                                <img id="certificateImage"
-                                     src="assets/images/certificate-1.jpeg"
-                                     alt="Technical Course in Vegetable Crops certificate">
-                                <span class="certificate-image-caption">CERTIFICATE PREVIEW</span>
-                            </div>
-
-                            <div class="certificate-controls">
-                                <button type="button" id="certificatePrevious" aria-label="Previous certificate">←</button>
-                                <span id="certificateCounter">01 / 03</span>
-                                <button type="button" id="certificateNext" aria-label="Next certificate">→</button>
-                            </div>
-
-                            <div class="certificate-thumbnails" aria-label="Choose a certificate">
-                                <button type="button" class="certificate-thumbnail active" data-certificate="0" aria-label="Show certificate one">
-                                    <img src="assets/images/certificate-1.jpeg" alt="">
-                                </button>
-                                <button type="button" class="certificate-thumbnail" data-certificate="1" aria-label="Show certificate two">
-                                    <img src="assets/images/certificate-2.jpeg" alt="">
-                                </button>
-                                <button type="button" class="certificate-thumbnail" data-certificate="2" aria-label="Show certificate three">
-                                    <img src="assets/images/certificate-3.jpeg" alt="">
-                                </button>
-                            </div>
-                        </div>
-
-                        <article class="certificate-details" aria-live="polite">
-                            <div class="certificate-detail-top">
-                                <span class="certificate-category" id="certificateCategory">TECHNICAL TRAINING</span>
-                                <span class="certificate-status" id="certificateStatus">COMPLETED</span>
-                            </div>
-
-                            <p class="certificate-index" id="certificateIndex">CERTIFICATE 01</p>
-                            <h4 id="certificateTitle">Technical Course in Vegetable Crops</h4>
-                            <p class="certificate-institution" id="certificateInstitution">
-                                Fundación Carlos Him · Capacítate para el Empleo
-                            </p>
-
-                            <p class="certificate-description" id="certificateDescription">
-                                An online technical course focused on vegetable crop production,
-                                introducing fundamental knowledge and practices related to
-                                agricultural production and crop management.
-                            </p>
-
-                            <div class="certificate-stat-grid">
-                                <div class="certificate-stat">
-                                    <span>COURSE DURATION</span>
-                                    <strong id="certificateHours">62 hours</strong>
-                                </div>
-                                <div class="certificate-stat">
-                                    <span>ASSESSMENTS</span>
-                                    <strong id="certificateExams">14 / 14</strong>
-                                </div>
-                                <div class="certificate-stat">
-                                    <span>FINAL SCORE</span>
-                                    <strong id="certificateScore">8.81</strong>
-                                </div>
-                                <div class="certificate-stat">
-                                    <span>PROGRESS</span>
-                                    <strong id="certificateProgress">100%</strong>
-                                </div>
-                            </div>
-
-                            <div class="certificate-date">
-                                <span id="certificateDateLabel">ENROLLMENT DATE</span>
-                                <p id="certificateDate">September 29, 2026 · 9:06 AM</p>
-                            </div>
-
-                            <div class="certificate-learning">
-                                <span>LEARNING OUTCOME</span>
-                                <p id="certificateLearning">
-                                    Developed foundational knowledge of vegetable cultivation
-                                    and agricultural production processes.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section volunteering-section" id="volunteering">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">05 / COMMUNITY</p>
-                    <h2>Volunteering and <span>service</span></h2>
-                    <p class="section-subtitle">
-                        Experiences that have strengthened my commitment to others.
-                    </p>
-                </div>
-
-                <div class="volunteer-grid">
-                    <article class="volunteer-card reveal">
-                        <span class="volunteer-number">01</span>
-                        <h3>GLASSWING</h3>
-                        <span class="volunteer-year">2025</span>
-                        <p>Educational support and participation in extracurricular clubs.</p>
-                    </article>
-
-                    <article class="volunteer-card reveal">
-                        <span class="volunteer-number">02</span>
-                        <h3>Leer para Soñar</h3>
-                        <span class="volunteer-year">2024</span>
-                        <p>Support for education initiatives, safe spaces and equality.</p>
-                    </article>
-
-                    <article class="volunteer-card reveal">
-                        <span class="volunteer-number">03</span>
-                        <h3>Grupo Juvenil</h3>
-                        <span class="volunteer-year">Community service</span>
-                        <p>Fundraising, sales and event decoration activities.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section contact-section" id="contact">
-            <div class="container contact-card reveal">
-                <div class="contact-content">
-                    <p class="eyebrow">06 / GET IN TOUCH</p>
-                    <h2>Let's connect<span>.</span></h2>
-                    <p>
-                        Thank you for visiting my portfolio. I am always interested
-                        in learning, sharing ideas and connecting with new opportunities.
-                    </p>
-                    <a class="button button-primary" href="mailto:hernandezgabrielaa@gmail.com">
-                        Send me an email <span>↗</span>
-                    </a>
-                </div>
-
-                <div class="contact-details">
-                    <div>
-                        <span class="detail-label">EMAIL</span>
-                        <a href="mailto:hernandezgabrielaa@gmail.com">hernandezgabrielaa@gmail.com</a>
-                    </div>
-
-                    <div>
-                        <span class="detail-label">LOCATION</span>
-                        <p>Lourdes, Colón, La Libertad, El Salvador</p>
-                    </div>
-
-                    <div>
-                        <span class="detail-label">LANGUAGES</span>
-                        <p>Spanish — Native</p>
-                        <p>English — Intermediate</p>
-                    </div>
-
-                    <a class="cv-download-link" href="cv.html">View educational CV ↗</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <a class="brand footer-brand" href="#home">
-                <img class="brand-mark" src="assets/images/photo-1.jpeg" alt="Fátima Hernández">
-                <span>Fátima Hernández</span>
-            </a>
-            <p>© 2026 Fátima Hernández</p>
-            <a href="#home" class="back-to-top">Back to top ↑</a>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/script.js"></script>
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <div class="section-heading reveal">
+                <p class="eyebrow">03 / SELECTED WORK</p>
+                <h2>Featured <span>projects</span></h2>
+                <p class="section-subtitle">
+                    Technology projects developed as part of my ¡Supérate! experience.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card reveal">
+                    <div class="project-top">
+                        <span class="project-year">2024</span>
+                        <span class="project-type">HACKATHON</span>
+                    </div>
+
+                    <div class="project-symbol">01</div>
+                    <h3>MYHOOD</h3>
+
+                    <p class="project-description">
+                        A community-focused application developed during Hackathon 2024.
+                        The platform was designed to improve communication and access
+                        to useful neighborhood information. It also allowed community
+                        members to discover volunteer opportunities and create their
+                        own initiatives, encouraging participation and collaboration
+                        within their neighborhoods.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Power Apps Development</span>
+                        <span>UI/UX Design</span>
+                    </div>
+
+                    <a class="project-link" href="https://apps.powerapps.com/play/e/default-d8e3bd44-0bba-426b-952d-ada7bb17393c/a/3a847e19-cc25-45d2-9c32-d7da4d3f4ea5?tenantId=d8e3bd44-0bba-426b-952d-ada7bb17393c&hint=375a041c-9f9b-4d1b-8ca0-4f06e231d00d&sourcetime=1794165853092" target="_blank" rel="noopener noreferrer">
+                        Open original application <span>↗</span>
+                    </a>
+                </article>
+
+                <article class="project-card project-card-featured reveal">
+                    <div class="project-top">
+                        <span class="project-year">2025</span>
+                        <span class="project-type">EXPO</span>
+                    </div>
+
+                    <div class="project-symbol">02</div>
+                    <h3>LOQALLI</h3>
+
+                    <p class="project-description">
+                        A platform concept that connects tourists with local hosts
+                        through authentic cultural micro-experiences in El Salvador.
+                        Visitors can discover and take part in activities such as
+                        learning to prepare traditional food, exploring local customs
+                        and experiencing Salvadoran culture through the people who
+                        know it best. I created the original idea and contributed
+                        to the front-end development of the website.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Concept Creator</span>
+                        <span>Front-End Development</span>
+                    </div>
+
+                    <a class="project-link" href="../02_LOQALLI/index.html">
+                        Explore project <span>↗</span>
+                    </a>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-top">
+                        <span class="project-year">2026</span>
+                        <span class="project-type">EXPOTECH</span>
+                    </div>
+
+                    <div class="project-symbol">03</div>
+                    <h3>FINANS</h3>
+
+                    <p class="project-description">
+                        A financial management platform designed for micro and small
+                        businesses. FINANS combines income and expense tracking,
+                        inventory management, financial insights and an AI-powered
+                        assistant to support smarter business decisions.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Back-End Development</span>
+                        <span>Stripe Payment Integration</span>
+                    </div>
+
+                    <a class="project-link" href="https://finans-website.onrender.com/" target="_blank" rel="noopener noreferrer">
+                        Visit Project <span>↗</span>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section education-section" id="education">
+        <div class="container">
+            <div class="section-heading reveal">
+                <p class="eyebrow">04 / COMPLEMENTARY TRAINING</p>
+                <h2>Complementary <span>Training</span></h2>
+            </div>
+
+            <div class="certificates-panel reveal">
+                <div class="certificates-heading">
+                    <div>
+                        <p class="eyebrow">COMPLEMENTARY TRAINING</p>
+                        <h3>Courses and certifications</h3>
+                        <p class="certificates-intro">
+                            Select a certificate to explore its details and learning experience.
+                        </p>
+                    </div>
+
+                    <a href="cv.html" class="text-link">View full CV ↗</a>
+                </div>
+
+                <div class="certificate-gallery" id="certificateGallery">
+                    <div class="certificate-preview">
+                        <div class="certificate-image-frame">
+                            <img id="certificateImage" src="assets/images/certificate-1.jpeg" alt="Technical Course in Vegetable Crops certificate">
+                            <span class="certificate-image-caption">CERTIFICATE PREVIEW</span>
+                        </div>
+
+                        <div class="certificate-controls">
+                            <button type="button" id="certificatePrevious" aria-label="Previous certificate">←</button>
+                            <span id="certificateCounter">01 / 07</span>
+                            <button type="button" id="certificateNext" aria-label="Next certificate">→</button>
+                        </div>
+
+                        <div class="certificate-thumbnails" aria-label="Choose a certificate">
+                            <button type="button" class="certificate-thumbnail active" data-certificate="0" aria-label="Show certificate one"><img src="assets/images/certificate-1.jpeg" alt=""></button>
+                            <button type="button" class="certificate-thumbnail" data-certificate="1" aria-label="Show certificate two"><img src="assets/images/certificate-2.jpeg" alt=""></button>
+                            <button type="button" class="certificate-thumbnail" data-certificate="2" aria-label="Show certificate three"><img src="assets/images/certificate-3.jpeg" alt=""></button>
+                            <button type="button" class="certificate-thumbnail" data-certificate="3" aria-label="Show certificate four"><img src="assets/images/certificate-4.jpeg" alt=""></button>
+                            <button type="button" class="certificate-thumbnail" data-certificate="4" aria-label="Show certificate five"><img src="assets/images/certificate-5.jpeg" alt=""></button>
+                            <button type="button" class="certificate-thumbnail" data-certificate="5" aria-label="Show certificate six"><img src="assets/images/certificate-6.jpeg" alt=""></button>
+                            <button type="button" class="certificate-thumbnail" data-certificate="6" aria-label="Show certificate seven"><img src="assets/images/certificate-7.jpeg" alt=""></button>
+                        </div>
+                    </div>
+
+                    <article class="certificate-details" aria-live="polite">
+                        <div class="certificate-detail-top">
+                            <span class="certificate-category" id="certificateCategory">TECHNICAL TRAINING</span>
+                            <span class="certificate-status" id="certificateStatus">COMPLETED</span>
+                        </div>
+
+                        <p class="certificate-index" id="certificateIndex">CERTIFICATE 01</p>
+
+                        <h4 id="certificateTitle">Technical Course in Vegetable Crops</h4>
+
+                        <p class="certificate-institution" id="certificateInstitution">
+                            Fundación Carlos Hinn · Capacítate para el Empleo
+                        </p>
+
+                        <p class="certificate-description" id="certificateDescription">
+                            An online technical course focused on vegetable crop production,
+                            introducing fundamental knowledge and practices related to
+                            agricultural production and crop management.
+                        </p>
+
+                        <div class="certificate-stat-grid">
+                            <div class="certificate-stat">
+                                <span>COURSE DURATION</span>
+                                <strong id="certificateHours">62 hours</strong>
+                            </div>
+
+                            <div class="certificate-stat">
+                                <span>ASSESSMENTS</span>
+                                <strong id="certificateExams">14 / 14</strong>
+                            </div>
+
+                            <div class="certificate-stat">
+                                <span>FINAL SCORE</span>
+                                <strong id="certificateScore">8.81</strong>
+                            </div>
+
+                            <div class="certificate-stat">
+                                <span>PROGRESS</span>
+                                <strong id="certificateProgress">100%</strong>
+                            </div>
+                        </div>
+
+                        <div class="certificate-date">
+                            <span id="certificateDateLabel">ENROLLMENT DATE</span>
+                            <p id="certificateDate">September 29, 2026 · 9:06 AM</p>
+                        </div>
+
+                        <div class="certificate-learning">
+                            <span>LEARNING OUTCOME</span>
+                            <p id="certificateLearning">
+                                Developed foundational knowledge of vegetable cultivation
+                                and agricultural production processes.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section volunteering-section" id="volunteering">
+        <div class="container">
+            <div class="section-heading reveal">
+                <p class="eyebrow">05 / COMMUNITY</p>
+                <h2>Volunteering and <span>service</span></h2>
+                <p class="section-subtitle">
+                    Experiences that have strengthened my commitment to others.
+                </p>
+            </div>
+
+            <div class="volunteer-grid">
+                <article class="volunteer-card reveal">
+                    <span class="volunteer-number">01</span>
+                    <h3>GLASSWING</h3>
+                    <span class="volunteer-year">2025</span>
+                    <p>Educational support and participation in extracurricular clubs.</p>
+                </article>
+
+                <article class="volunteer-card reveal">
+                    <span class="volunteer-number">02</span>
+                    <h3>Leer para Soñar</h3>
+                    <span class="volunteer-year">2024</span>
+                    <p>Support for education initiatives, safe spaces and equality.</p>
+                </article>
+
+                <article class="volunteer-card reveal">
+                    <span class="volunteer-number">03</span>
+                    <h3>Grupo Juvenil</h3>
+                    <span class="volunteer-year">Currently</span>
+                    <p>Fundraising, sales and event decoration activities.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+        <div class="container contact-card reveal">
+            <div class="contact-content">
+                <p class="eyebrow">06 / GET IN TOUCH</p>
+                <h2>Let's connect<span>.</span></h2>
+
+                <p>
+                    Thank you for visiting my portfolio. I am always interested
+                    in learning, sharing ideas and connecting with new opportunities.
+                </p>
+
+                <a class="button button-primary" href="mailto:hernandezgabrielaa@gmail.com">
+                    Send me an email <span>↗</span>
+                </a>
+            </div>
+
+            <div class="contact-details">
+                <div>
+                    <span class="detail-label">EMAIL</span>
+                    <a href="mailto:hernandezgabrielaa@gmail.com">hernandezgabrielaa@gmail.com</a>
+                </div>
+
+                <div>
+                    <span class="detail-label">LOCATION</span>
+                    <p>Lourdes, Colón, La Libertad, El Salvador</p>
+                </div>
+
+                <a class="cv-download-link" href="cv.html">View educational CV ↗</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <a class="brand footer-brand" href="#home">
+            <img class="brand-mark" src="assets/images/photo-1.jpeg" alt="Fátima Hernández">
+            <span>Fátima Hernández</span>
+        </a>
+
+        <p>© 2026 Fátima Hernández</p>
+
+        <a href="#home" class="back-to-top">Back to top ↑</a>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

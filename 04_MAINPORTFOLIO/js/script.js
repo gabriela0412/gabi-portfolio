@@ -1,11 +1,8 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const reducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
     ).matches;
-
-    // MOBILE MENU
 
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
@@ -32,8 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // SCROLL PROGRESS
-
     const scrollProgress = document.getElementById("scrollProgress");
 
     function updateScrollProgress() {
@@ -54,8 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     updateScrollProgress();
-
-    // REVEAL ANIMATIONS
 
     const revealElements = document.querySelectorAll(".reveal");
 
@@ -80,8 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // SMALL GALAXY PARTICLES
-
     const sparkleLayer = document.getElementById("sparkleLayer");
 
     if (sparkleLayer && !reducedMotion) {
@@ -105,8 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
             sparkleLayer.appendChild(sparkle);
         }
     }
-
-    // SHOOTING STARS
 
     const shootingStars = document.getElementById("shootingStars");
 
@@ -139,8 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         scheduleNextStar();
     }
-
-    // INTERACTIVE MEMORY GALLERY
 
     const memoryGallery = document.getElementById("memoryGallery");
 
@@ -208,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.setTimeout(() => {
                         newTopCard.classList.remove("is-arriving");
                         isAnimating = false;
-                    }, 650);
+                    }, reducedMotion ? 0 : 650);
 
                 }, reducedMotion ? 0 : 400);
             }
@@ -223,8 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // CERTIFICATE GALLERY
-
     const certificateGallery = document.getElementById("certificateGallery");
 
     if (certificateGallery) {
@@ -236,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 category: "TECHNICAL TRAINING",
                 status: "COMPLETED",
                 title: "Technical Course in Vegetable Crops",
-                institution: "Fundación Carlos Him · Capacítate para el Empleo",
+                institution: "Fundación Carlos Hinn · Capacítate para el Empleo",
                 description: "An online technical course focused on vegetable crop production, introducing fundamental knowledge and practices related to agricultural production and crop management.",
                 hours: "62 hours",
                 exams: "14 / 14",
@@ -252,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 category: "LEADERSHIP TRAINING",
                 status: "COMPLETED",
                 title: "Leadership Course",
-                institution: "Fundación Carlos Him · Capacítate para el Empleo",
+                institution: "Fundación Carlos Hinn · Capacítate para el Empleo",
                 description: "An online course focused on leadership development and the importance of guiding, motivating and working effectively with others.",
                 hours: "16 hours",
                 exams: "1 / 1",
@@ -273,10 +258,74 @@ document.addEventListener("DOMContentLoaded", () => {
                 hours: "13 hours",
                 exams: null,
                 score: null,
-                progress: "Approved",
+                progress: null,
                 dateLabel: "COMPLETION DATE",
                 date: "September 29, 2026",
                 learning: "Developed introductory skills for organizing information and working with spreadsheets using Microsoft Excel."
+            },
+            {
+                image: "assets/images/certificate-4.jpeg",
+                alt: "Microsoft Office Specialist Excel Expert certification",
+                category: "MICROSOFT CERTIFICATION",
+                status: "CERTIFIED",
+                title: "Microsoft Office Specialist: Excel Expert",
+                institution: "Microsoft · Microsoft 365 Apps",
+                description: "Professional certification demonstrating advanced knowledge and skills in Microsoft Excel.",
+                hours: null,
+                exams: null,
+                score: null,
+                progress: null,
+                dateLabel: "DATE OF ACHIEVEMENT",
+                date: "May 12, 2026 · Expires May 12, 2031",
+                learning: null
+            },
+            {
+                image: "assets/images/certificate-5.jpeg",
+                alt: "Microsoft Office Specialist Excel Associate certification",
+                category: "MICROSOFT CERTIFICATION",
+                status: "CERTIFIED",
+                title: "Microsoft Office Specialist: Excel Associate",
+                institution: "Microsoft · Microsoft 365 Apps",
+                description: "Professional certification recognizing skills and knowledge in Microsoft Excel.",
+                hours: null,
+                exams: null,
+                score: null,
+                progress: null,
+                dateLabel: "DATE OF ACHIEVEMENT",
+                date: "November 4, 2025 · Expires November 4, 2030",
+                learning: null
+            },
+            {
+                image: "assets/images/certificate-6.jpeg",
+                alt: "Prompt Engineering course certificate",
+                category: "DIGITAL SKILLS",
+                status: "APPROVED",
+                title: "Prompt Engineering",
+                institution: "Platzi",
+                description: "A course combining theoretical and practical learning about prompt engineering.",
+                hours: "13 hours",
+                exams: null,
+                score: null,
+                progress: null,
+                dateLabel: "COMPLETION DATE",
+                date: "May 15, 2026",
+                learning: null
+            },
+            {
+                image: "assets/images/certificate-7.jpeg",
+                alt: "Google Suite course certificate",
+                category: "DIGITAL SKILLS",
+                status: "APPROVED",
+                title: "Google Suite",
+                institution: "Platzi",
+                description: "A course combining theoretical and practical learning about Google Suite tools.",
+                hours: "10 hours",
+                exams: null,
+                score: null,
+                progress: null,
+                dateLabel: "COMPLETION DATE",
+                date: "July 1, 2026",
+                learning: null
             }
         ];
 
@@ -329,6 +378,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 : null;
         }
 
+        function updateOptionalField(key, element, value) {
+            if (!element) return;
+
+            const statKeys = ["hours", "exams", "score", "progress"];
+
+            if (statKeys.includes(key)) {
+                const statCard = getStatCard(element);
+
+                if (statCard) {
+                    statCard.hidden = value === null;
+                }
+            }
+
+            if (key === "learning") {
+                const learningContainer = element.closest(".certificate-learning");
+
+                if (learningContainer) {
+                    learningContainer.hidden = value === null;
+                }
+            }
+
+            element.textContent = value ?? "";
+        }
+
         function showCertificate(index) {
             if (!image) return;
 
@@ -349,17 +422,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 Object.entries(fields).forEach(([key, element]) => {
                     if (!element) return;
 
-                    const value = certificate[key];
+                    const value = key === "index"
+                        ? `${String(currentCertificate + 1).padStart(2, "0")} / ${String(certificates.length).padStart(2, "0")}`
+                        : certificate[key];
 
-                    if (key === "exams" || key === "score") {
-                        const statCard = getStatCard(element);
-
-                        if (statCard) {
-                            statCard.hidden = value === null;
-                        }
-                    }
-
-                    element.textContent = value ?? "";
+                    updateOptionalField(key, element, value);
                 });
 
                 if (counter) {
@@ -412,8 +479,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         showCertificate(0);
     }
-
-    // ACTIVE NAVIGATION LINK
 
     const sections = document.querySelectorAll("main section[id]");
     const navigationLinks = document.querySelectorAll(".nav-links a");
